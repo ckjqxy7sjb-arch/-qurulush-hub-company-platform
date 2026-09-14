@@ -1,0 +1,23 @@
+[Unit]
+Description=Qurulush Hub company platform
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=qurulush
+Group=qurulush
+WorkingDirectory=/opt/qurulush-hub
+EnvironmentFile=/etc/qurulush-hub/company-platform.env
+ExecStartPre=/usr/bin/python3 /opt/qurulush-hub/company_platform_server.py --preflight --require-production --db /var/lib/qurulush-hub/company.sqlite3 --uploads /var/lib/qurulush-hub/uploads --backups /var/lib/qurulush-hub/backups --tls-cert /etc/letsencrypt/live/company.example/fullchain.pem --tls-key /etc/letsencrypt/live/company.example/privkey.pem
+ExecStart=/usr/bin/python3 /opt/qurulush-hub/company_platform_server.py --host 127.0.0.1 --port 8781 --db /var/lib/qurulush-hub/company.sqlite3 --uploads /var/lib/qurulush-hub/uploads --backups /var/lib/qurulush-hub/backups --tls-cert /etc/letsencrypt/live/company.example/fullchain.pem --tls-key /etc/letsencrypt/live/company.example/privkey.pem --require-production
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/var/lib/qurulush-hub
+
+[Install]
+WantedBy=multi-user.target

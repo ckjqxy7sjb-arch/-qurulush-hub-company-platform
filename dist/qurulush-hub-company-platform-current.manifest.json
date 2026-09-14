@@ -1,0 +1,220 @@
+{
+  "format": "qurulush-release-manifest-v1",
+  "generated_at": "2026-09-14 02:17:32",
+  "file_count": 39,
+  "excludes": [
+    "*.db",
+    "*.jpeg",
+    "*.jpg",
+    "*.log",
+    "*.pdf",
+    "*.png",
+    "*.pyc",
+    "*.sqlite3",
+    ".agents",
+    ".codex",
+    ".git",
+    "__pycache__",
+    "backups",
+    "dist",
+    "outputs",
+    "uploads"
+  ],
+  "files": [
+    {
+      "path": ".env.production.example",
+      "size": 2354,
+      "sha256": "b9623a57392fe4c9c747094bced6284c618467768559b5e7e2e2acdc788d0ce0"
+    },
+    {
+      "path": "HANDOFF_STATUS.md",
+      "size": 5531,
+      "sha256": "0dc79b0292201019932ac8ffd73795144f5c011d07d5f4e2c773367d3cbde701"
+    },
+    {
+      "path": "KG_PAYMENT_ORCHESTRATION_PLAN.md",
+      "size": 4471,
+      "sha256": "7400341d6b8f5dca803ddff2114524e43ba4a21d2d5b2c4b076e7d9c77b44622"
+    },
+    {
+      "path": "MOBILE_FIELD_APP_PLAN.md",
+      "size": 4666,
+      "sha256": "b467b946ee79766ddd8160b504a2f512cb89de3003d179d98b2df20da45c23e6"
+    },
+    {
+      "path": "PROJECT_EXPORT.md",
+      "size": 18093,
+      "sha256": "8943b155561c00e881ecd0d3c4c40c8933b7216f5364b35ebf90a6478c4c44c1"
+    },
+    {
+      "path": "READINESS_CHECKLIST.md",
+      "size": 47433,
+      "sha256": "3347a83a90cbd4d340b09b45aa472e096067408ea882872fee2c12fc69bef9fd"
+    },
+    {
+      "path": "README.md",
+      "size": 4146,
+      "sha256": "40008f85d5e7d7d7e1e3b42a2645b0a4e65ca06016119d0f9db1fe04d2574575"
+    },
+    {
+      "path": "RUN_COMPANY_PLATFORM.md",
+      "size": 44890,
+      "sha256": "22728ddc65b7cb574d64b7612245f74f06bda7042ee4b6c7c6780bf1b5aec8e4"
+    },
+    {
+      "path": "TEST_REPORT_COMPANY_PLATFORM.md",
+      "size": 78869,
+      "sha256": "de724399193af129175324d92cdaa2fccc933ed25d4b90ab7ea0285849a2b828"
+    },
+    {
+      "path": "company_platform_accessibility_smoke.mjs",
+      "size": 5995,
+      "sha256": "a30e4cc6c2fc156bec024834d59305c93b54d20c980eacef6599bb6e2f9dd9af"
+    },
+    {
+      "path": "company_platform_responsive_smoke.mjs",
+      "size": 19418,
+      "sha256": "52fe811e1372e8d9e6d2b3720833567c8b70e39e9e01f5bb3366f818eae5aeac"
+    },
+    {
+      "path": "company_platform_server.py",
+      "size": 543769,
+      "sha256": "b3525def867588606c471a03faf17c64e9364855d721fba5474e5af51b3dce39"
+    },
+    {
+      "path": "company_platform_server_smoke.mjs",
+      "size": 126142,
+      "sha256": "67b80e29f215ed369d27ccff4fd5e69e4038fa5fc784bc6bf13955084544bc5f"
+    },
+    {
+      "path": "extracted_dgask/01_Инспектор.html",
+      "size": 266465,
+      "sha256": "7ade51601846f7d050ece809ef0d35f4706088b94af7bab3c5e45a8b83886314"
+    },
+    {
+      "path": "extracted_dgask/02_Региональный_отдел.html",
+      "size": 103919,
+      "sha256": "bf39451e3c14c30434cf11fa340caca677e1bc6f1ab0d0d79857be7e7280a79f"
+    },
+    {
+      "path": "extracted_dgask/03_Министерство.html",
+      "size": 277547,
+      "sha256": "a470838a928975f332e16e202e6386dc8c66accd82ba2fd593260cce0f52bd0a"
+    },
+    {
+      "path": "extracted_dgask/04_Строительная_компания.html",
+      "size": 360470,
+      "sha256": "69c957c4111a6728f3731dae8e7756580578636c557519de0b68a5c46311cff2"
+    },
+    {
+      "path": "extracted_dgask/index.html",
+      "size": 6658,
+      "sha256": "86f5271d203efb4ec9d9da8e69a800aa133a11315db37a584e94cc7e3ca2c2c5"
+    },
+    {
+      "path": "extracted_dgask/ksk_sync.js",
+      "size": 28533,
+      "sha256": "eaaedfd78aa101fd83dbe9c8fc5e4d87dffaafbf9f628c823d208ba6705f1b7a"
+    },
+    {
+      "path": "ops/README_PRODUCTION.md",
+      "size": 14511,
+      "sha256": "231efee1c4552356392159b76b660ee75a1799567005c5dc0c34a4807edd6969"
+    },
+    {
+      "path": "ops/backup_restore_drill.py",
+      "size": 4880,
+      "sha256": "62b107a0f0c1d5222c302f0af5941581ebf34f7a967c1d8e57dea77cd2946be3"
+    },
+    {
+      "path": "ops/build_release_package.py",
+      "size": 5481,
+      "sha256": "666d9f226616aecc3dbc1556ba4309a82655242d559f69feb7e3bc550dc08bd2"
+    },
+    {
+      "path": "ops/collect_acceptance_evidence.py",
+      "size": 7136,
+      "sha256": "436be7415e54adcd6ea55645969c599410e03351e12c5ee5421517b5cf3b45fc"
+    },
+    {
+      "path": "ops/completion_audit.py",
+      "size": 8641,
+      "sha256": "3912add3a49a0e766af6a4b9b54aea531cce886fd49bd63e8617443bbcba95fe"
+    },
+    {
+      "path": "ops/deployment_audit.py",
+      "size": 10602,
+      "sha256": "2fc5a04523efbf7e88cdb9d04f30373d78e5cadc2a699b0b2ca4b9a37b7aec15"
+    },
+    {
+      "path": "ops/go_no_go_check.py",
+      "size": 13531,
+      "sha256": "ab2754f0b2cd44ab8cc6bd1de54c56db6305641d56db58e9ee002959368a4cf6"
+    },
+    {
+      "path": "ops/hook_contract_smoke.py",
+      "size": 10589,
+      "sha256": "ae184ebd6280e51c15cc3e470c8c5bf5af749127fddc517f81e086b334a2a0a5"
+    },
+    {
+      "path": "ops/hook_examples/README.md",
+      "size": 935,
+      "sha256": "a9306c6f47a880d210bb1138fd7e3636db1978446d87a38c15b9ca2815db9515"
+    },
+    {
+      "path": "ops/hook_examples/av_scan_contract_example.py",
+      "size": 602,
+      "sha256": "3817b60582832d16b0c9543810e852a624087841cc77495d425952e6314c73d0"
+    },
+    {
+      "path": "ops/hook_examples/backup_remote_contract_example.py",
+      "size": 957,
+      "sha256": "edd914275511505ca7426bb1a0763117e4fc6ce9a242febf79b5dd31041f15d2"
+    },
+    {
+      "path": "ops/hook_examples/eds_sign_contract_example.py",
+      "size": 1021,
+      "sha256": "436522497b0240ce9178705bdd8c509d034ebb4012d0dbe4fb259232dd762a36"
+    },
+    {
+      "path": "ops/hook_examples/payment_confirm_contract_example.py",
+      "size": 1034,
+      "sha256": "f7bb78655092f54fb1cca32e8f0e87b0cfe3ef6c989005e3b95c8914823ce272"
+    },
+    {
+      "path": "ops/hook_examples/sacc2_sync_contract_example.py",
+      "size": 1037,
+      "sha256": "6b44ad22f6c7cbfcae67e66e90aba4a64b67a4a7964ee76a8c48d7fc351c12d9"
+    },
+    {
+      "path": "ops/hook_examples/storage_sync_contract_example.py",
+      "size": 828,
+      "sha256": "0fbcfbd10f2871c488f2be3e91519f4126f4f62d321eeceaa8ffe913f2beeeff"
+    },
+    {
+      "path": "ops/nginx-qurulush-hub.conf.example",
+      "size": 870,
+      "sha256": "5a826353ad1df6d915adbbb3bb79bd7850bc001dccab51f09040c38edac82293"
+    },
+    {
+      "path": "ops/production_smoke_check.py",
+      "size": 97884,
+      "sha256": "16fcb71563ca12ee8014a21f1d48ddcd647ec3dd454387379763bfd2fb68481c"
+    },
+    {
+      "path": "ops/qurulush-hub.service.example",
+      "size": 1149,
+      "sha256": "6c826b594132caa6000769babd72bacbf4a89cdfebe92d6a1d0f07aaa24b7a87"
+    },
+    {
+      "path": "ops/release_acceptance_check.py",
+      "size": 8230,
+      "sha256": "48555375c41b693a5dde3690ffd8c0ee07b897ced0bf3acc8d3d384b3275177b"
+    },
+    {
+      "path": "ops/render_deployment_files.py",
+      "size": 7727,
+      "sha256": "4e5a1f13a9405a6bd9954a719c95674953111967bd16615924ff2ff6b4a7bdd9"
+    }
+  ]
+}

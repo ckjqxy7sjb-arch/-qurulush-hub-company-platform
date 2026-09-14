@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Qurulush Hub · Рабочая платформа строительства</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Inter,"Segoe UI",Arial,sans-serif;background:#f6f7f9;color:#1b2430}
+.wrap{max-width:1160px;margin:0 auto;padding:34px 22px 46px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:30px}
+.mark{width:44px;height:44px;border-radius:8px;background:#111827;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:14px}
+h1{font-size:28px;line-height:1.15;margin:0 0 8px}
+.sub{color:#667085;max-width:720px;line-height:1.5}
+.status{border:1px solid #d9dee7;background:#fff;border-radius:8px;padding:12px 14px;min-width:220px}
+.status b{display:block;font-size:13px;margin-bottom:4px}
+.status span{display:inline-flex;background:#e9f7ef;color:#127a45;border-radius:999px;padding:3px 9px;font-size:11px;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.card{background:#fff;border:1px solid #d9dee7;border-radius:8px;padding:18px;box-shadow:0 1px 2px rgba(16,24,40,.05),0 8px 22px rgba(16,24,40,.06);min-height:245px;display:flex;flex-direction:column}
+.role{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#667085;font-weight:800;margin-bottom:12px}
+.card h2{font-size:18px;margin:0 0 8px;color:#1b2430}
+.card p{font-size:13px;color:#667085;line-height:1.45;margin:0 0 18px}
+.list{display:grid;gap:7px;margin:0 0 18px;padding:0;list-style:none}
+.list li{font-size:12px;color:#475467;display:flex;gap:7px}
+.list li:before{content:"";width:6px;height:6px;margin-top:6px;border-radius:50%;background:#24507f;flex:0 0 auto}
+.btn{margin-top:auto;display:inline-flex;justify-content:center;text-decoration:none;background:#183153;color:#fff;border-radius:7px;padding:10px 12px;font-weight:800;font-size:13px}
+.btn.secondary{background:#fff;color:#183153;border:1px solid #d9dee7}
+.foot{margin-top:22px;border:1px solid #d9dee7;border-radius:8px;background:#fff;padding:16px;color:#667085;font-size:13px;line-height:1.5}
+@media(max-width:980px){.top{flex-direction:column}.grid{grid-template-columns:1fr}.wrap{padding:22px 14px}.status{width:100%}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <section class="top">
+    <div>
+      <div class="mark">QH</div>
+      <h1>Qurulush Hub · Рабочая платформа строительства</h1>
+      <div class="sub">Единый прототип для взаимодействия строительной компании с инспектором, региональным отделом и министерством: объекты, документы, проверки, предписания, штрафы, ЕРН и уведомления.</div>
+    </div>
+    <div class="status">
+      <b>Состояние пакета</b>
+      <span>Функциональная демо-версия</span>
+    </div>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <div class="role">Компания</div>
+      <h2>Кабинет строительной компании</h2>
+      <p>Основной рабочий интерфейс подрядчика с внутренними ролями и сохранением данных.</p>
+      <ul class="list">
+        <li>гендиректор, главный инженер, прораб, бригадир, бухгалтер, юрист</li>
+        <li>запросы ДГАСК, документы, проверки, платежи и штрафы</li>
+        <li>ответы, оплаты и изменения сохраняются локально</li>
+      </ul>
+      <a class="btn" href="04_Строительная_компания.html">Открыть кабинет</a>
+    </article>
+
+    <article class="card">
+      <div class="role">Министерство</div>
+      <h2>Панель министерства</h2>
+      <p>Государственный контур контроля: реестр, объекты, инспекторы, документы, ЕРН, протоколы и аналитика.</p>
+      <ul class="list">
+        <li>сводные отчёты и статистика ГАСК</li>
+        <li>реестры документов, договоров и нарушений</li>
+        <li>карта и аудит действий</li>
+      </ul>
+      <a class="btn secondary" href="03_Министерство.html">Открыть министерство</a>
+    </article>
+
+    <article class="card">
+      <div class="role">Регион</div>
+      <h2>Региональный отдел</h2>
+      <p>Контур согласования отчётов инспекторов, контроля нарушений и региональных уведомлений.</p>
+      <ul class="list">
+        <li>согласование, возврат и запрос уточнений</li>
+        <li>нарушения по региону</li>
+        <li>показатели инспекторов</li>
+      </ul>
+      <a class="btn secondary" href="02_Региональный_отдел.html">Открыть регион</a>
+    </article>
+
+    <article class="card">
+      <div class="role">Инспектор</div>
+      <h2>Личный кабинет инспектора</h2>
+      <p>Рабочее место инспектора для проверок, отчётов, актов, предписаний, ИЖС и документов.</p>
+      <ul class="list">
+        <li>выезды и посещения объектов</li>
+        <li>формы, справки и официальные бланки</li>
+        <li>еженедельные и месячные отчёты</li>
+      </ul>
+      <a class="btn secondary" href="01_Инспектор.html">Открыть инспектора</a>
+    </article>
+  </section>
+
+  <section class="foot">
+    Для демо-проверки откройте кабинет компании и переключайте роль в правом верхнем углу. Права доступа меняют доступность действий: бригадир не отвечает на запросы ДГАСК, бухгалтер подтверждает платежи, юрист создаёт обращения, главный инженер закрывает технические запросы.
+  </section>
+</main>
+</body>
+</html>
