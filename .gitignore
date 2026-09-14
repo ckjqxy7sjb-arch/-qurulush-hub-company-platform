@@ -6,11 +6,8 @@ uploads/
 backups/
 outputs/
 
-# Generated release history; keep current package if needed via explicit force add
-dist/*.zip
-dist/*.manifest.json
-!dist/qurulush-hub-company-platform-current.zip
-!dist/qurulush-hub-company-platform-current.manifest.json
+# Generated frontend build and old release packages
+dist/
 
 # Screenshots and caches
 *.png

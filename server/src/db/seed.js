@@ -39,7 +39,7 @@ async function seed() {
     const objectId = object.rows[0].id;
     const notification = await client.query(
       `INSERT INTO notifications (company_id, object_id, source, source_ref, type, title, body, status, urgent, due_at)
-       VALUES ($1, $2, 'sacc2 / Минстрой', 'demo-notification-1', 'request', 'Входящее уведомление', 'Требуется ответ компании с документом или комментарием.', 'needs_company', true, current_date + 3)
+       VALUES ($1, $2, 'Ведомственный контур', 'demo-notification-1', 'request', 'Входящее уведомление', 'Требуется ответ компании с документом, квитанцией или комментарием.', 'needs_company', true, current_date + 3)
        ON CONFLICT (company_id, source_ref) DO UPDATE SET updated_at = now()
        RETURNING id`,
       [companyId, objectId],
@@ -51,7 +51,7 @@ async function seed() {
     );
     await client.query(
       `INSERT INTO documents (company_id, notification_id, object_id, title, description, status, due_at)
-       VALUES ($1, $2, $3, 'Ответный документ', 'Файл для отправки в ведомственный контур', 'required', current_date + 3)`,
+       VALUES ($1, $2, $3, 'Ответный документ', 'Документ, фото, акт или квитанция для отправки по уведомлению', 'required', current_date + 3)`,
       [companyId, notification.rows[0].id, objectId],
     );
     await client.query(

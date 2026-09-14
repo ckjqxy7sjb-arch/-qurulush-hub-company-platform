@@ -20,7 +20,7 @@ export default function NotificationsPage() {
       <div className={styles.toolbar}>
         <div>
           <h2>Входящие уведомления</h2>
-          <p>Единая очередь от sacc2, Минстроя, ДГАСК, инспектора и платежного контура.</p>
+          <p>Единая очередь входящих требований, начислений, запросов и статусов от внешнего ведомственного контура.</p>
         </div>
       </div>
       <div className={`${styles.card} ${styles.tableWrap}`}>

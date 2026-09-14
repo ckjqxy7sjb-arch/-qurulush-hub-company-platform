@@ -42,7 +42,7 @@ export default function PaymentsPage() {
       <div className={styles.toolbar}>
         <div>
           <h2>Платежи и начисления</h2>
-          <p>Штрафы, госпошлины и другие начисления с подтверждением оплаты.</p>
+          <p>Все суммы к оплате по уведомлениям: штрафы, госпошлины, счета и подтверждения.</p>
         </div>
         <button className="btn secondary" onClick={exportExcel}>Экспорт Excel</button>
       </div>

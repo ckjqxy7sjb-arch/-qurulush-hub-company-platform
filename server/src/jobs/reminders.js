@@ -13,7 +13,7 @@ async function createReminderAudit(action) {
 export function startReminderJobs() {
   cron.schedule(
     "0 16 * * 5",
-    () => createReminderAudit("weekly_inspector_deadline_reminder").catch(console.error),
+    () => createReminderAudit("weekly_company_deadline_reminder").catch(console.error),
     { timezone: env.cronTz },
   );
 

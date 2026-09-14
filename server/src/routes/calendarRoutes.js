@@ -4,5 +4,5 @@ import { authenticate, allowRoles } from "../middleware/auth.js";
 
 export const calendarRoutes = Router();
 
-calendarRoutes.use(authenticate, allowRoles("company", "ministry", "regional", "inspector"));
+calendarRoutes.use(authenticate, allowRoles("company"));
 calendarRoutes.get("/", index);

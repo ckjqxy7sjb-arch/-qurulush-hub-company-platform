@@ -23,10 +23,10 @@ export function AppShell() {
     <div className={styles.shell} data-theme={theme}>
       <aside className={styles.sidebar}>
         <div className={styles.brand}>
-          <div className={styles.mark}>ДК</div>
+          <div className={styles.mark}>QH</div>
           <div className={styles.brandText}>
-            <strong>ДГАСК КР</strong>
-            <span>Кабинет компании</span>
+            <strong>Qurulush Hub</strong>
+            <span>Кабинет строительной компании</span>
           </div>
         </div>
         <nav className={styles.nav} aria-label="Разделы платформы">
@@ -49,7 +49,7 @@ export function AppShell() {
         <header className={styles.topbar}>
           <div className={styles.title}>
             <strong>Операционный центр строительной компании</strong>
-            <span>Уведомления, оплаты, документы и сроки без лишних министерских модулей</span>
+            <span>Уведомления, оплаты, документы, сроки и внутренние поручения</span>
           </div>
           <div className={styles.actions}>
             <span className="pill">{user?.companyRole || user?.role || "company"}</span>

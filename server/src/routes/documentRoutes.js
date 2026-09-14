@@ -5,6 +5,6 @@ import { upload } from "../middleware/upload.js";
 
 export const documentRoutes = Router();
 
-documentRoutes.use(authenticate, allowRoles("company", "ministry", "regional", "inspector"));
+documentRoutes.use(authenticate, allowRoles("company"));
 documentRoutes.get("/", index);
 documentRoutes.post("/:id/versions", upload.single("file"), uploadVersion);
