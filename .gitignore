@@ -19,6 +19,10 @@ dist/*.manifest.json
 __pycache__/
 .pycache-test/
 *.pyc
+node_modules/
+.pnpm-store/
+.vite/
+coverage/
 
 # Local/editor files
 .DS_Store

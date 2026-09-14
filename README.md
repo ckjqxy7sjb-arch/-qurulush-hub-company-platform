@@ -1,89 +1,85 @@
-# Qurulush Hub: платформа строительной компании
+# ДГАСК КР: кабинет строительной компании
 
-Рабочий кабинет строительной компании для взаимодействия с инспектором, региональным отделом, Министерством строительства КР, ДГАСК и sacc2-контуром.
+Новая основная версия проекта переводит платформу на full-stack:
+
+- Frontend: React 18.3, Vite 5, React Router v6, TanStack Query v5, Zustand, Axios.
+- Backend: Node.js 20 LTS, Express 4.19, PostgreSQL через `pg`, JWT auth, Joi validation.
+- Production: Windows Server, PM2, IIS reverse proxy.
+
+Цель платформы: дать строительной компании простой рабочий кабинет для входящих уведомлений от sacc2 / Минстроя / ДГАСК, оплат, отправки документов, внутренних поручений, календаря сроков и чата с ИИ.
+
+## Что изменилось
+
+Старый HTML/Python-прототип остается в репозитории как `legacy/reference`. Новый основной код находится в:
+
+- `src/` - React SPA.
+- `server/src/` - Express REST API.
+- `server/migrations/` - PostgreSQL SQL migrations.
+- `docs/ARCHITECTURE.md` - описание архитектуры.
+- `docs/WINDOWS_PM2_IIS.md` - схема production на Windows Server + PM2 + IIS.
+
+Из пользовательской логики убраны лишние министерские разделы: юридические источники, НПА-справочник как основной экран, production readiness, acceptance evidence, launch bundle и демо-данные ведомственного кабинета.
 
 ## Быстрый старт
 
 ```bash
-/Users/maxai/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 company_platform_server.py --port 8782
+npm install
+cp .env.example .env
+npm run migrate
+npm run seed
+npm run dev:api
+npm run dev
 ```
 
-Открыть:
+Frontend:
 
 ```text
-http://127.0.0.1:8782/04_Строительная_компания.html
+http://127.0.0.1:5173
 ```
 
-Демо-доступ:
+API:
 
 ```text
-Локальный demo-пароль задается через QH_DEMO_PASSWORD и выдается отдельно.
+http://127.0.0.1:8080/api
 ```
 
-## Что внутри
+## Основные разделы
 
-- Кабинет строительной компании: `extracted_dgask/04_Строительная_компания.html`.
-- Backend/API/SQLite/readiness/Word/ZIP: `company_platform_server.py`.
-- Полный Markdown-паспорт проекта: `PROJECT_EXPORT.md`.
-- Статус передачи: `HANDOFF_STATUS.md`.
-- Инструкция запуска: `RUN_COMPANY_PLATFORM.md`.
-- Checklist production: `READINESS_CHECKLIST.md`.
-- Тестовый отчет: `TEST_REPORT_COMPANY_PLATFORM.md`.
-- План мобильной версии: `MOBILE_FIELD_APP_PLAN.md`.
-- План платежей Кыргызстана: `KG_PAYMENT_ORCHESTRATION_PLAN.md`.
-- Операционные скрипты production: `ops/`.
+- `Центр` - главные метрики и срочные действия.
+- `Уведомления` - входящие запросы, начисления, замечания, статусы.
+- `Платежи` - штрафы, госпошлины, начисления, квитанции.
+- `Документы` - ответы, акты, фото, подтверждения оплаты.
+- `Поручения` - задачи для прораба, бригадира, бухгалтера, юриста.
+- `Календарь` - сроки по уведомлениям, оплатам, документам и задачам.
+- `Чат ИИ` - внутренний чат и локальные подсказки.
+- `Доступы` - сотрудники, роли и объектные ограничения.
 
-## Основные модули
+## Роли
 
-- объекты строительства;
-- поручения и замечания;
-- запросы ДГАСК / Минстроя;
-- разрешительные документы;
-- проверки и предписания;
-- госпошлины, начисления, штрафы и обжалования;
-- внутренний чат с локальным ИИ;
-- календарь сроков;
-- роли и уровни доступа;
-- журнал аудита;
-- production readiness и launch bundle;
-- future roadmap для мобильной field-версии и платежной оркестрации Кыргызстана.
+В backend есть основные роли ведомственного контура:
 
-## Проверки
+- `ministry`
+- `regional`
+- `inspector`
+- `company`
 
-Последняя локальная проверка:
+Внутри компании используется `company_role`:
 
-- Backend/regression suite: `129 tests OK`.
-- Browser smoke: `ok=true`.
-- Responsive smoke: `ok=true` на mobile/tablet/desktop.
-- Live smoke: `ok=true`.
-- Release acceptance: `ok=true`.
-- Acceptance evidence: `failed_stages=[]`.
+- `director`
+- `chief_engineer`
+- `foreman`
+- `brigadier`
+- `accountant`
+- `lawyer`
 
-## Production
+## Внешние интеграции
 
-Локальная передача готова. Для production нужны внешние этапы:
+Подготовлен внешний endpoint для будущего sacc2:
 
-1. Домен/VPS/HTTPS/nginx.
-2. Боевые учетные записи и отключение demo.
-3. Официальный sacc2/API доступ и регламент статусов.
-4. ЭЦП.
-5. Платежный шлюз Кыргызстана с callback/reconciliation.
-6. Production storage и AV scanner.
-7. Remote backups.
-8. Юридическая сверка справочника НПА, тарифов, штрафов, сроков и форм.
-9. Финальный `go_no_go_check.py --require-production`.
+```text
+POST /api/external/sacc2/notifications
+```
 
-## Документы для отделов
+Он принимает входящее уведомление и кладет его в очередь компании.
 
-Для передачи другим отделам начинать с:
-
-- `PROJECT_EXPORT.md` - полный обзор проекта.
-- `HANDOFF_STATUS.md` - короткий статус.
-- `READINESS_CHECKLIST.md` - что готово и что осталось.
-- `MOBILE_FIELD_APP_PLAN.md` - будущая мобильная версия для поля.
-- `KG_PAYMENT_ORCHESTRATION_PLAN.md` - платежи Кыргызстана.
-- `dist/qurulush-hub-company-platform-current.zip` - актуальный release-пакет.
-
-## Важное
-
-GitHub Pages может показать только статическую HTML-демо-страницу. Полноценная рабочая платформа использует backend/API/SQLite, поэтому для работы отделов через интернет нужен VPS или другой backend-хостинг.
+Платежные системы Кыргызстана будут подключаться через слой `payments`: после callback/reconciliation платформа должна обновлять статус оплаты, сохранять номер платежа и квитанцию.
